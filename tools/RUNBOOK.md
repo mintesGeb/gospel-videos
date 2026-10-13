@@ -34,8 +34,16 @@ stop for that channel and carry on — the next run will catch up.
 2. Delete video files from `videos/` once no flag is false or the time has passed
    (Buffer keeps its own copy). Commit and push `schedule.json` and deletions.
 3. If fewer than 8 future posts remain in `schedule.json`, make a new week (28 videos):
-   - Pick 28 new KJV verses (public domain) on salvation/God's love, not used in any
-     `used_verses_*.json`. Quote the KJV text exactly. Write each spec as in
+   - Bible translation: NIV while `niv_verses_used.json` lists fewer than 470 verses
+     (NIV allows up to 500 verses without written permission; each quote is labeled "(NIV)" —
+     set `version: "NIV"` in each spec and the renderer adds the label). Add every new verse to
+     `niv_verses_used.json`. When the list reaches 470, switch to the Berean Standard Bible
+     (public domain, `version: "BSB"`) and tell the user in the report.
+   - Pick 28 new verses on salvation/God's love, not used in any `used_verses_*.json`.
+     Quote the text EXACTLY: verify each verse with WebFetch on biblehub.com (e.g.
+     https://biblehub.com/niv/john/3.htm) by asking "does verse X read exactly: ...? YES/NO".
+     For display only: drop a trailing comma/semicolon/dash (end with a period), capitalize the
+     first letter, and balance any unmatched quotation mark. Write each spec as in
      `used_verses_week1.json` (file, ref, verse, close, sub, palette, hook). `hook` is a short
      scroll-stopping line (max ~6 words) shown on the first frame, e.g. "Tired? Read this." and save as
      `used_verses_weekN.json`.

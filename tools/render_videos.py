@@ -100,7 +100,7 @@ def render(spec, out):
             al = ease((t - starts[i]) / 0.8) * fo
             if al > 0: text_c(ld, txt, y0 + i * lh + (1 - ease((t - starts[i]) / 0.8)) * 40, f_main, (255, 248, 235), al)
         al = ease((t - 7.8) / 0.8) * fo
-        if al > 0: text_c(ld, "— " + spec["ref"], y0 + len(lines) * lh + 30, f_ref, (255, 214, 150), al)
+        if al > 0: text_c(ld, "— " + spec["ref"] + (" (" + spec["version"] + ")" if spec.get("version") else ""), y0 + len(lines) * lh + 30, f_ref, (255, 214, 150), al)
         if t >= 10.2:
             al = ease((t - 10.2) / 0.8)
             for j, bl in enumerate(big_lines):

@@ -49,7 +49,7 @@ def render(spec, out):
 
     # cross layer precomputed
     c = Image.new("RGBA", (W, H), (0, 0, 0, 0)); cd = ImageDraw.Draw(c)
-    x, ty = W // 2 - 40, 300
+    x, ty = W // 2 - 40, 400
     cd.rectangle([x - 9, ty, x + 9, ty + 210], fill=(255, 236, 200, 255))
     cd.rectangle([x - 70, ty + 55, x + 70, ty + 73], fill=(255, 236, 200, 255))
     halo = c.filter(ImageFilter.GaussianBlur(18))
@@ -61,14 +61,14 @@ def render(spec, out):
     while True:
         f_main = ImageFont.truetype(SERIF_B, size)
         lines = wrap(tmp, spec["verse"], f_main, 740)
-        if len(lines) * size * 1.45 <= 760 or size <= 48: break
+        if len(lines) * size * 1.45 <= 700 or size <= 46: break
         size -= 4
     lh = int(size * 1.45)
     f_ref = ImageFont.truetype(SERIF_I, 52); f_cta = ImageFont.truetype(SERIF, 48)
     f_page = ImageFont.truetype(SANS, 40); f_big = ImageFont.truetype(SERIF_B, 72)
     big_lines = wrap(tmp, spec["close"], f_big, 740)
     block_h = len(lines) * lh + 90
-    y0 = 600 + (820 - block_h) // 2
+    y0 = 660 + (760 - block_h) // 2
     reveal_end = 7.0
     starts = [2.1 + i * (reveal_end - 2.1) / max(1, len(lines)) for i in range(len(lines))]
     f_hook = ImageFont.truetype(SERIF_B, 70)
@@ -104,17 +104,17 @@ def render(spec, out):
         if t >= 10.2:
             al = ease((t - 10.2) / 0.8)
             for j, bl in enumerate(big_lines):
-                text_c(ld, bl, 780 + j * 95 + (1 - al) * 30, f_big, (255, 248, 235), al)
-            text_c(ld, spec["sub"], 780 + len(big_lines) * 95 + 40, f_cta, (255, 214, 150), ease((t - 11.2) / 0.8))
+                text_c(ld, bl, 830 + j * 95 + (1 - al) * 30, f_big, (255, 248, 235), al)
+            text_c(ld, spec["sub"], 830 + len(big_lines) * 95 + 40, f_cta, (255, 214, 150), ease((t - 11.2) / 0.8))
         # hook: fully visible on the very first frame, fades out as the verse starts
         if hook_lines and t < 2.4:
             ha = 1.0 if t < 1.7 else 1 - ease((t - 1.7) / 0.6)
-            hy = 760 - len(hook_lines) * 50
+            hy = 800 - len(hook_lines) * 50
             for j, hl in enumerate(hook_lines):
                 text_c(ld, hl, hy + j * 100, f_hook, (255, 236, 190), ha)
         if t >= 12.2:
-            text_c(ld, "Send this to someone who needs it", 1180, f_share, (255, 240, 220), ease((t - 12.2) / 0.7))
-        text_c(ld, "Trust Jesus and Be Saved", H - 470, f_page, (255, 240, 220), 0.9 if hook_lines else ease((t - 0.5) / 1.0) * 0.9)
+            text_c(ld, "Send this to someone who needs it", 1230, f_share, (255, 240, 220), ease((t - 12.2) / 0.7))
+        text_c(ld, "Trust Jesus and Be Saved", H - 420, f_page, (255, 240, 220), 0.9 if hook_lines else ease((t - 0.5) / 1.0) * 0.9)
         img.alpha_composite(layer)
         proc.stdin.write(img.convert("RGB").tobytes())
     proc.stdin.close(); proc.wait()

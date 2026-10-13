@@ -15,6 +15,12 @@ the plan runs low.
 - Instagram (gosple_daily): channelId `6ace5e5c778b240e2ff9a224`
   - attachment `video`, method `schedule`, text = `story_text`,
     dynamic_properties `{ig_post_type: "story", video, scheduling_type: "direct", scheduled_at}`
+- Facebook Page REEL (same channel `6ace5ea2778b240e2ff9a4a0`): text = `reel_caption`,
+    dynamic_properties `{fb_post_type: "facebook_reel", video, scheduled_at}`
+- Instagram REEL (same channel `6ace5e5c778b240e2ff9a224`): text = `reel_caption`,
+    dynamic_properties `{ig_post_type: "reels", ig_share_to_feed: "true", video, scheduling_type: "direct", scheduled_at}`
+- Reels only go out at the 12pm and 8pm slots: in `schedule.json` those posts have
+  `facebook_reel`/`instagram_reel` = false (to do) or true (done); other posts have null (skip).
 - `video` = `https://raw.githubusercontent.com/mintesGeb/gospel-videos/main/<file>` (repo must be public).
 
 Buffer free plan: max 10 scheduled posts per channel. Only schedule posts whose `time` is
@@ -23,9 +29,9 @@ stop for that channel and carry on — the next run will catch up.
 
 ## Steps
 1. In `schedule.json`, for each post with a future `time` within 48h, schedule every channel
-   whose flag (`tiktok`, `facebook_story`, `instagram_story`) is false; set the flag true on
+   whose flag (`tiktok`, `facebook_story`, `instagram_story`, `facebook_reel`, `instagram_reel`) is false; set the flag true on
    success. Never schedule a post twice. Skip posts whose `time` has passed (leave flag false).
-2. Delete video files from `videos/` once all three flags are true or the time has passed
+2. Delete video files from `videos/` once no flag is false or the time has passed
    (Buffer keeps its own copy). Commit and push `schedule.json` and deletions.
 3. If fewer than 8 future posts remain in `schedule.json`, make a new week (28 videos):
    - Pick 28 new KJV verses (public domain) on salvation/God's love, not used in any
@@ -37,7 +43,7 @@ stop for that channel and carry on — the next run will catch up.
    - Music: tracks live in the PRIVATE repo `mintesGeb/gospel-assets` under `music/`
      (do not copy them into this public repo). `sh tools/add_music.sh <silent> <final> <music_dir>`.
      If that repo is unavailable, stop and tell the user instead of posting silent videos.
-   - Copy finals to `videos/`, append posts to `schedule.json` continuing the 8am/12pm/4pm/8pm
+   - Copy finals to `videos/`, append posts to `schedule.json` (with `reel_caption` = caption plus a line "Send this to someone who needs it." before the hashtags, no #fyp; reel flags false at 12pm/8pm, null otherwise) continuing the 8am/12pm/4pm/8pm
      Eastern slots after the last existing post, flags false. Commit and push.
 4. Report briefly: what was scheduled per channel, any errors, how many posts remain.
 

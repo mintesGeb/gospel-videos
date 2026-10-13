@@ -1,7 +1,7 @@
 {
  "translation": "NIV",
  "limit": 500,
- "note": "NIV permits up to 500 verses without written permission; label each quote (NIV). Switch to BSB (public domain) before reaching 500.",
+ "note": "Shared counter for ALL NIV quotes (gospel videos + Trust Jesus Page text posts). NIV permits up to 500 verses without written permission; label each quote (NIV). At 470 switch everything to BSB (Berean Standard Bible, public domain).",
  "verses_used": [
   "1 John 1:9",
   "1 John 5:12",
@@ -31,5 +31,6 @@
   "Romans 6:23",
   "Romans 8:1",
   "Titus 3:5"
- ]
+ ],
+ "count": 28
 }

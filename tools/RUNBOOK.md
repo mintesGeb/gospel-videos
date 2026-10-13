@@ -43,7 +43,8 @@ the top instead of retrying.
    - Bible translation: NIV while `niv_verses_used.json` lists fewer than 470 verses
      (NIV allows up to 500 verses without written permission; each quote is labeled "(NIV)" —
      set `version: "NIV"` in each spec and the renderer adds the label). Add every new verse to
-     `niv_verses_used.json`. When the list reaches 470, switch to the Berean Standard Bible
+     `niv_verses_used.json` (shared with the "Trust Jesus Page Posts" task, so `git pull --rebase`
+     before editing and pushing it). When the list reaches 470, switch to the Berean Standard Bible
      (public domain, `version: "BSB"`) and tell the user in the report.
    - Pick 28 new verses on salvation/God's love, not used in any `used_verses_*.json`.
      Quote the text EXACTLY: verify each verse with WebFetch on biblehub.com (e.g.
@@ -55,8 +56,9 @@ the top instead of retrying.
      `used_verses_weekN.json`.
    - Render silent videos: `python3 tools/render_videos.py <specs.json> <out_dir>` (needs
      ffmpeg, numpy, Pillow, DejaVu fonts). Check one frame of the longest verse visually.
-   - Music: tracks live in the PRIVATE repo `mintesGeb/gospel-assets` under `music/`
-     (do not copy them into this public repo). `sh tools/add_music.sh <silent> <final> <music_dir>`.
+   - Music: tracks live in the PRIVATE repo `mintesGeb/gospel-assets` under `music/` (attach it
+     with add_repo owner "mintesGeb", repo "gospel-assets", access "read", then clone it).
+     Do not copy the mp3s into this public repo. `sh tools/add_music.sh <silent> <final> <music_dir>`.
      If that repo is unavailable, stop and tell the user instead of posting silent videos.
    - Copy finals to `videos/`, append posts to `schedule.json` (with `reel_caption` = caption plus a line "Send this to someone who needs it." before the hashtags, no #fyp; reel flags false at 12pm/4pm/8pm and null at 8am; story flags false at 8am and null otherwise) continuing the 8am/12pm/4pm/8pm
      Eastern slots after the last existing post, flags false. Commit and push.

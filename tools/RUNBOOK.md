@@ -36,7 +36,8 @@ stop for that channel and carry on — the next run will catch up.
 3. If fewer than 8 future posts remain in `schedule.json`, make a new week (28 videos):
    - Pick 28 new KJV verses (public domain) on salvation/God's love, not used in any
      `used_verses_*.json`. Quote the KJV text exactly. Write each spec as in
-     `used_verses_week1.json` (file, ref, verse, close, sub, palette) and save as
+     `used_verses_week1.json` (file, ref, verse, close, sub, palette, hook). `hook` is a short
+     scroll-stopping line (max ~6 words) shown on the first frame, e.g. "Tired? Read this." and save as
      `used_verses_weekN.json`.
    - Render silent videos: `python3 tools/render_videos.py <specs.json> <out_dir>` (needs
      ffmpeg, numpy, Pillow, DejaVu fonts). Check one frame of the longest verse visually.

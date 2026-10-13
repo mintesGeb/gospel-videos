@@ -5,7 +5,8 @@
   "verse": "That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved.",
   "close": "Believe and be saved.",
   "sub": "Confess Him as Lord today.",
-  "palette": "ocean"
+  "palette": "ocean",
+  "hook": ""
  },
  {
   "file": "d1_2_ephesians2_8",
@@ -13,7 +14,8 @@
   "verse": "For by grace are ye saved through faith; and that not of yourselves: it is the gift of God.",
   "close": "Salvation is a gift.",
   "sub": "Receive it by faith.",
-  "palette": "royal"
+  "palette": "royal",
+  "hook": ""
  },
  {
   "file": "d1_3_john14_6",
@@ -21,7 +23,8 @@
   "verse": "Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.",
   "close": "Jesus is the way.",
   "sub": "Come to the Father through Him.",
-  "palette": "sky"
+  "palette": "sky",
+  "hook": ""
  },
  {
   "file": "d1_4_romans5_8",
@@ -29,7 +32,8 @@
   "verse": "But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.",
   "close": "He died for you.",
   "sub": "God's love is real.",
-  "palette": "dawn"
+  "palette": "dawn",
+  "hook": ""
  },
  {
   "file": "d2_1_matthew11_28",
@@ -37,7 +41,8 @@
   "verse": "Come unto me, all ye that labour and are heavy laden, and I will give you rest.",
   "close": "Come to Jesus.",
   "sub": "Find rest for your soul.",
-  "palette": "royal"
+  "palette": "royal",
+  "hook": "Tired? Read this."
  },
  {
   "file": "d2_2_acts4_12",
@@ -45,7 +50,8 @@
   "verse": "Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.",
   "close": "Only one name saves.",
   "sub": "Call on Jesus.",
-  "palette": "sky"
+  "palette": "sky",
+  "hook": "There is only one way."
  },
  {
   "file": "d2_3_romans6_23",
@@ -53,7 +59,8 @@
   "verse": "For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.",
   "close": "Eternal life is offered.",
   "sub": "Receive the gift.",
-  "palette": "dawn"
+  "palette": "dawn",
+  "hook": "The best gift you'll ever get"
  },
  {
   "file": "d2_4_revelation3_20",
@@ -61,7 +68,8 @@
   "verse": "Behold, I stand at the door, and knock: if any man hear my voice, and open the door, I will come in to him, and will sup with him, and he with me.",
   "close": "He is knocking.",
   "sub": "Open the door to Jesus.",
-  "palette": "ocean"
+  "palette": "ocean",
+  "hook": "Do you hear Him knocking?"
  },
  {
   "file": "d3_1_1john1_9",
@@ -69,7 +77,8 @@
   "verse": "If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.",
   "close": "You can be forgiven.",
   "sub": "Bring it all to Him.",
-  "palette": "sky"
+  "palette": "sky",
+  "hook": "It's not too late for you"
  },
  {
   "file": "d3_2_2corinthians5_17",
@@ -77,7 +86,8 @@
   "verse": "Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.",
   "close": "A new beginning.",
   "sub": "In Christ, all is new.",
-  "palette": "dawn"
+  "palette": "dawn",
+  "hook": "You can start over."
  },
  {
   "file": "d3_3_john10_10",
@@ -85,7 +95,8 @@
   "verse": "The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly.",
   "close": "Life in abundance.",
   "sub": "Jesus came for you.",
-  "palette": "ocean"
+  "palette": "ocean",
+  "hook": "Jesus wants more for you"
  },
  {
   "file": "d3_4_romans3_23",
@@ -93,7 +104,8 @@
   "verse": "For all have sinned, and come short of the glory of God;",
   "close": "We all need Him.",
   "sub": "Grace is for everyone.",
-  "palette": "royal"
+  "palette": "royal",
+  "hook": "No one is perfect. Read this."
  },
  {
   "file": "d4_1_isaiah53_5",
@@ -101,7 +113,8 @@
   "verse": "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.",
   "close": "By His wounds, healed.",
   "sub": "He took your place.",
-  "palette": "dawn"
+  "palette": "dawn",
+  "hook": "He did this for you"
  },
  {
   "file": "d4_2_john11_25",
@@ -109,7 +122,8 @@
   "verse": "Jesus said unto her, I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live:",
   "close": "He is risen.",
   "sub": "Believe and live.",
-  "palette": "ocean"
+  "palette": "ocean",
+  "hook": "Death is not the end"
  },
  {
   "file": "d4_3_psalm34_8",
@@ -117,7 +131,8 @@
   "verse": "O taste and see that the LORD is good: blessed is the man that trusteth in him.",
   "close": "The Lord is good.",
   "sub": "Trust Him today.",
-  "palette": "royal"
+  "palette": "royal",
+  "hook": "Try this today"
  },
  {
   "file": "d4_4_john6_37",
@@ -125,7 +140,8 @@
   "verse": "All that the Father giveth me shall come to me; and him that cometh to me I will in no wise cast out.",
   "close": "He won't turn you away.",
   "sub": "Come just as you are.",
-  "palette": "sky"
+  "palette": "sky",
+  "hook": "He will not turn you away"
  },
  {
   "file": "d5_1_romans8_1",
@@ -133,7 +149,8 @@
   "verse": "There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.",
   "close": "No condemnation.",
   "sub": "Freedom in Christ.",
-  "palette": "ocean"
+  "palette": "ocean",
+  "hook": "Stop carrying that guilt"
  },
  {
   "file": "d5_2_1john5_12",
@@ -141,7 +158,8 @@
   "verse": "He that hath the Son hath life; and he that hath not the Son of God hath not life.",
   "close": "Life is in the Son.",
   "sub": "Do you have Him?",
-  "palette": "royal"
+  "palette": "royal",
+  "hook": "This changes everything"
  },
  {
   "file": "d5_3_titus3_5",
@@ -149,7 +167,8 @@
   "verse": "Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost;",
   "close": "Saved by mercy.",
   "sub": "Not by works, by grace.",
-  "palette": "sky"
+  "palette": "sky",
+  "hook": "You can't earn this"
  },
  {
   "file": "d5_4_jeremiah29_11",
@@ -157,7 +176,8 @@
   "verse": "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",
   "close": "God has a plan.",
   "sub": "Your future is in His hands.",
-  "palette": "dawn"
+  "palette": "dawn",
+  "hook": "Worried about tomorrow?"
  },
  {
   "file": "d6_1_john1_12",
@@ -165,7 +185,8 @@
   "verse": "But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name:",
   "close": "Become God's child.",
   "sub": "Receive Him today.",
-  "palette": "royal"
+  "palette": "royal",
+  "hook": "You can be God's child"
  },
  {
   "file": "d6_2_psalm103_12",
@@ -173,7 +194,8 @@
   "verse": "As far as the east is from the west, so far hath he removed our transgressions from us.",
   "close": "Your sins, removed.",
   "sub": "His mercy is complete.",
-  "palette": "sky"
+  "palette": "sky",
+  "hook": "Where do forgiven sins go?"
  },
  {
   "file": "d6_3_isaiah1_18",
@@ -181,7 +203,8 @@
   "verse": "Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow;",
   "close": "Washed white as snow.",
   "sub": "Come to the Lord.",
-  "palette": "dawn"
+  "palette": "dawn",
+  "hook": "No stain is too deep"
  },
  {
   "file": "d6_4_hebrews13_8",
@@ -189,7 +212,8 @@
   "verse": "Jesus Christ the same yesterday, and to day, and for ever.",
   "close": "He never changes.",
   "sub": "Trust Him forever.",
-  "palette": "ocean"
+  "palette": "ocean",
+  "hook": "Everything changes. He doesn't."
  },
  {
   "file": "d7_1_romans10_13",
@@ -197,7 +221,8 @@
   "verse": "For whosoever shall call upon the name of the Lord shall be saved.",
   "close": "Call on His name.",
   "sub": "Whosoever means you.",
-  "palette": "sky"
+  "palette": "sky",
+  "hook": "Yes, this means you"
  },
  {
   "file": "d7_2_john8_36",
@@ -205,7 +230,8 @@
   "verse": "If the Son therefore shall make you free, ye shall be free indeed.",
   "close": "Truly free.",
   "sub": "Jesus breaks every chain.",
-  "palette": "dawn"
+  "palette": "dawn",
+  "hook": "Feeling stuck?"
  },
  {
   "file": "d7_3_1peter5_7",
@@ -213,7 +239,8 @@
   "verse": "Casting all your care upon him; for he careth for you.",
   "close": "He cares for you.",
   "sub": "Give Him your burdens.",
-  "palette": "ocean"
+  "palette": "ocean",
+  "hook": "Give Him what you're carrying"
  },
  {
   "file": "d7_4_philippians4_13",
@@ -221,6 +248,7 @@
   "verse": "I can do all things through Christ which strengtheneth me.",
   "close": "Strength in Christ.",
   "sub": "Lean on Him today.",
-  "palette": "royal"
+  "palette": "royal",
+  "hook": "Need strength today?"
  }
 ]

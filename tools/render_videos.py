@@ -70,7 +70,10 @@ def render(spec, out):
     block_h = len(lines) * lh + 90
     y0 = 600 + (820 - block_h) // 2
     reveal_end = 7.0
-    starts = [1.4 + i * (reveal_end - 1.4) / max(1, len(lines)) for i in range(len(lines))]
+    starts = [2.1 + i * (reveal_end - 2.1) / max(1, len(lines)) for i in range(len(lines))]
+    f_hook = ImageFont.truetype(SERIF_B, 70)
+    hook_lines = wrap(tmp, spec.get("hook", ""), f_hook, 760) if spec.get("hook") else []
+    f_share = ImageFont.truetype(SANS, 42)
 
     def text_c(draw, txt, yc, font, fill, alpha):
         w = draw.textlength(txt, font=font)
@@ -83,7 +86,7 @@ def render(spec, out):
         t = fi / FPS
         pulse = 0.85 + 0.15 * math.sin(t * 1.3)
         frame = base + glow3 * pulse + rays3 * pulse * (0.8 + 0.2 * math.sin(t * 0.9))
-        ca = ease(t / 1.2) * (0.9 + 0.1 * pulse)
+        ca = (1.0 if hook_lines else ease(t / 1.2)) * (0.9 + 0.1 * pulse)
         a = cross_np[:, :, 3:4] / 255 * ca
         frame = frame * (1 - a) + cross_np[:, :, :3] * a
         img = Image.fromarray(np.clip(frame, 0, 255).astype(np.uint8)).convert("RGBA")
@@ -103,7 +106,15 @@ def render(spec, out):
             for j, bl in enumerate(big_lines):
                 text_c(ld, bl, 780 + j * 95 + (1 - al) * 30, f_big, (255, 248, 235), al)
             text_c(ld, spec["sub"], 780 + len(big_lines) * 95 + 40, f_cta, (255, 214, 150), ease((t - 11.2) / 0.8))
-        text_c(ld, "Trust Jesus and Be Saved", H - 470, f_page, (255, 240, 220), ease((t - 0.5) / 1.0) * 0.9)
+        # hook: fully visible on the very first frame, fades out as the verse starts
+        if hook_lines and t < 2.4:
+            ha = 1.0 if t < 1.7 else 1 - ease((t - 1.7) / 0.6)
+            hy = 760 - len(hook_lines) * 50
+            for j, hl in enumerate(hook_lines):
+                text_c(ld, hl, hy + j * 100, f_hook, (255, 236, 190), ha)
+        if t >= 12.2:
+            text_c(ld, "Send this to someone who needs it", 1180, f_share, (255, 240, 220), ease((t - 12.2) / 0.7))
+        text_c(ld, "Trust Jesus and Be Saved", H - 470, f_page, (255, 240, 220), 0.9 if hook_lines else ease((t - 0.5) / 1.0) * 0.9)
         img.alpha_composite(layer)
         proc.stdin.write(img.convert("RGB").tobytes())
     proc.stdin.close(); proc.wait()

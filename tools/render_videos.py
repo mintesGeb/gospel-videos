@@ -49,7 +49,7 @@ def render(spec, out):
 
     # cross layer precomputed
     c = Image.new("RGBA", (W, H), (0, 0, 0, 0)); cd = ImageDraw.Draw(c)
-    x, ty = W // 2 - 40, 400
+    x, ty = W // 2, 400
     cd.rectangle([x - 9, ty, x + 9, ty + 210], fill=(255, 236, 200, 255))
     cd.rectangle([x - 70, ty + 55, x + 70, ty + 73], fill=(255, 236, 200, 255))
     halo = c.filter(ImageFilter.GaussianBlur(18))
@@ -77,8 +77,8 @@ def render(spec, out):
 
     def text_c(draw, txt, yc, font, fill, alpha):
         w = draw.textlength(txt, font=font)
-        draw.text(((W - w) / 2 - 40 + 3, yc + 4), txt, font=font, fill=(0, 0, 0, int(140 * alpha)))
-        draw.text(((W - w) / 2 - 40, yc), txt, font=font, fill=fill + (int(255 * alpha),))
+        draw.text(((W - w) / 2 + 3, yc + 4), txt, font=font, fill=(0, 0, 0, int(140 * alpha)))
+        draw.text(((W - w) / 2, yc), txt, font=font, fill=fill + (int(255 * alpha),))
 
     proc = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
                              "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "fast", "-crf", "21", "-movflags", "+faststart", out], stdin=subprocess.PIPE)

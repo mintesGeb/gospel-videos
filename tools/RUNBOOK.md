@@ -19,8 +19,8 @@ the plan runs low.
     dynamic_properties `{fb_post_type: "facebook_reel", video, scheduled_at}`
 - Instagram REEL (same channel `6ace5e5c778b240e2ff9a224`): text = `reel_caption`,
     dynamic_properties `{ig_post_type: "reels", ig_share_to_feed: "true", video, scheduling_type: "direct", scheduled_at}`
-- Posting pattern (Zapier budget): TikTok at all 4 slots; Facebook + Instagram REELS at 12pm,
-  4pm and 8pm; Facebook + Instagram STORIES at 8am and 8pm (the 8pm post goes out as both a reel and a story). In `schedule.json` a flag is false (to do),
+- Posting pattern (Zapier budget, MG Oct 14): TikTok at all 4 slots; Facebook + Instagram REELS at all
+  4 slots (8am, 12pm, 4pm, 8pm); Facebook + Instagram STORY only at 8pm (the 8pm post goes out as both a reel and a story). In `schedule.json` a flag is false (to do),
   true (done) or null (skip this channel for this post).
 - `video` = `https://raw.githubusercontent.com/mintesGeb/gospel-videos/main/<file>` (repo must be public).
 
@@ -60,7 +60,7 @@ the top instead of retrying.
      with add_repo owner "mintesGeb", repo "gospel-assets", access "read", then clone it).
      Do not copy the mp3s into this public repo. `sh tools/add_music.sh <silent> <final> <music_dir>`.
      If that repo is unavailable, stop and tell the user instead of posting silent videos.
-   - Copy finals to `videos/`, append posts to `schedule.json` (with `reel_caption` = caption plus a line "Send this to someone who needs it." before the hashtags, no #fyp; reel flags false at 12pm/4pm/8pm and null at 8am; story flags false at 8am and 8pm and null at 12pm/4pm) continuing the 8am/12pm/4pm/8pm
+   - Copy finals to `videos/`, append posts to `schedule.json` (with `reel_caption` = caption plus a line "Send this to someone who needs it." before the hashtags, no #fyp; reel flags false at all 4 slots; story flags false at 8pm and null at 8am/12pm/4pm) continuing the 8am/12pm/4pm/8pm
      Eastern slots after the last existing post, flags false. Commit and push.
 4. Report briefly: what was scheduled per channel, any errors, how many posts remain.
 

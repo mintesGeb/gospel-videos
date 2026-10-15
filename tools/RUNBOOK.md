@@ -37,8 +37,8 @@ the top instead of retrying.
 1. In `schedule.json`, for each post with a future `time` within 48h, schedule every channel
    whose flag (`tiktok`, `facebook_story`, `instagram_story`, `facebook_reel`, `instagram_reel`) is false; set the flag true on
    success. Never schedule a post twice. Skip posts whose `time` has passed (leave flag false).
-2. Delete video files from `videos/` once no flag is false or the time has passed
-   (Buffer keeps its own copy). Commit and push `schedule.json` and deletions.
+2. NEVER delete video files from `videos/` (MG Oct 15: keep every video for future reuse).
+   Commit and push `schedule.json`.
 3. If fewer than 8 future posts remain in `schedule.json`, make a new week (28 videos):
    - Bible translation: NIV while `niv_verses_used.json` lists fewer than 470 verses
      (NIV allows up to 500 verses without written permission; each quote is labeled "(NIV)" —

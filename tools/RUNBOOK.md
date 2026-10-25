@@ -19,8 +19,9 @@ the plan runs low.
     dynamic_properties `{fb_post_type: "facebook_reel", video, scheduled_at}`
 - Instagram REEL (same channel `6ace5e5c778b240e2ff9a224`): text = `reel_caption`,
     dynamic_properties `{ig_post_type: "reels", ig_share_to_feed: "true", video, scheduling_type: "direct", scheduled_at}`
-- Posting pattern (Zapier budget, MG Oct 14): TikTok at all 4 slots; Facebook + Instagram REELS at all
-  4 slots (8am, 12pm, 4pm, 8pm); Facebook + Instagram STORY only at 8pm (the 8pm post goes out as both a reel and a story). In `schedule.json` a flag is false (to do),
+- Posting pattern (750-task Zapier plan, MG Oct 25): only TWO slots a day, 12pm and 8pm Eastern.
+  At each slot: TikTok + Facebook REEL + Instagram REEL. NO stories (story flags always null).
+  That is 6 Zapier actions a day. In `schedule.json` a flag is false (to do),
   true (done) or null (skip this channel for this post).
 - `video` = `https://raw.githubusercontent.com/mintesGeb/gospel-videos/main/<file>` (repo must be public).
 
@@ -39,14 +40,14 @@ the top instead of retrying.
    success. Never schedule a post twice. Skip posts whose `time` has passed (leave flag false).
 2. NEVER delete video files from `videos/` (MG Oct 15: keep every video for future reuse).
    Commit and push `schedule.json`.
-3. If fewer than 8 future posts remain in `schedule.json`, make a new week (28 videos):
+3. If fewer than 4 future posts remain in `schedule.json`, make a new week (14 videos, 2 a day):
    - Bible translation: NIV while `niv_verses_used.json` lists fewer than 470 verses
      (NIV allows up to 500 verses without written permission; each quote is labeled "(NIV)" —
      set `version: "NIV"` in each spec and the renderer adds the label). Add every new verse to
      `niv_verses_used.json` (shared with the "Trust Jesus Page Posts" task, so `git pull --rebase`
      before editing and pushing it). When the list reaches 470, switch to the Berean Standard Bible
      (public domain, `version: "BSB"`) and tell the user in the report.
-   - Pick 28 new verses on salvation/God's love, not used in any `used_verses_*.json`.
+   - Pick 14 new verses on salvation/God's love, not used in any `used_verses_*.json`.
      Quote the text EXACTLY: verify each verse with WebFetch on biblehub.com (e.g.
      https://biblehub.com/niv/john/3.htm) by asking "does verse X read exactly: ...? YES/NO".
      For display only: drop a trailing comma/semicolon/dash (end with a period), capitalize the
@@ -60,8 +61,8 @@ the top instead of retrying.
      with add_repo owner "mintesGeb", repo "gospel-assets", access "read", then clone it).
      Do not copy the mp3s into this public repo. `sh tools/add_music.sh <silent> <final> <music_dir>`.
      If that repo is unavailable, stop and tell the user instead of posting silent videos.
-   - Copy finals to `videos/`, append posts to `schedule.json` (with `reel_caption` = caption plus a line "Send this to someone who needs it." before the hashtags, no #fyp; reel flags false at all 4 slots; story flags false at 8pm and null at 8am/12pm/4pm) continuing the 8am/12pm/4pm/8pm
-     Eastern slots after the last existing post, flags false. Commit and push.
+   - Copy finals to `videos/`, append posts to `schedule.json` (with `reel_caption` = caption plus a line "Send this to someone who needs it." before the hashtags, no #fyp; tiktok and reel flags false, story flags null) continuing the 12pm/8pm
+     Eastern slots after the last existing post. Commit and push.
 4. Report briefly: what was scheduled per channel, any errors, how many posts remain.
 
 Note: times are US Eastern. Use offset -04:00 until Nov 1 2026, then -05:00 (standard time) until DST resumes in March.
